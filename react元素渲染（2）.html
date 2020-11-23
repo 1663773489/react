@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title></title>
+	<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+	<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+	<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<script type="text/babel">
+		class Clock extends React.Component {
+			render(){
+				return(
+					<div>
+						<h1>hello world</h1>
+						<h2>现在是{this.props.date.toLocaleTimeString()}</h2>
+					</div>
+					);
+				}
+		}
+		function tick(){
+			ReactDOM.render(
+				<Clock date={new Date()} />,
+				document.getElementById('example')
+			);
+		}
+		setInterval(tick,1000)
+	</script>
+	<strong>除了函数外 我们还可以创建一个react.component的ES6类，该类封装了要展示的元素，需要注意的是在render()方法中，需要使用this.props替换props</strong>
+</body>
+</html>

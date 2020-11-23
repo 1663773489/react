@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Hello React!</title>
+<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+
+<div id="example"></div>
+<script type="text/babel">
+function Name(props) {
+    return <h1> 网站名称： {props.name} </h1>;
+}
+function Url(props) {
+    return <h1> 网站地址 ： {props.url} </h1>;
+}
+function Nickname(props) {
+    return <h1> 网站小名 ：{props.nickname} </h1>;
+}
+function App(){
+    return (
+      <div>
+        <Name name = "一个复合组件的例子"/>
+        <Url url = "这里应该是一个网址 "/>
+        <Nickname nickname = "这应该是一个复合组建的例子"/>
+      </div>
+    )
+}
+ReactDOM.render(
+    <App/>,
+    document.getElementById('example'))
+</script>
+<strong>实例中app组件使用了Name Url Nickname 组件来输出对应的信息</strong>
+
+</body>
+</html>
